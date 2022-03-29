@@ -1,9 +1,37 @@
 header {
+    border: solid 2px black;
     color: blue;
 }
 
 .container-cards {
+    border: solid 2px black;
     width: 200px;
     height: 100px;
     background-color: aqua;
+}
+.question-card {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.answer-card {
+    font-family: Arial, Helvetica, sans-serif;
+    display: none;
+}
+.score-box {
+    border: solid 5px black;
+
+}
+#current-score {
+    display: none;
+}
+.correct {
+    border: solid 2px black;
+}
+.incorrect {
+    border: solid 2px black;
+}
+.next {
+    border: solid 2px black;
+}
+.reset {
+    border: solid 2px black;
 }
