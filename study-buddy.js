@@ -1,14 +1,14 @@
 // define Dom elements to manipulate
-let card = document.querySelector(".container")
-let flipCard = document.querySelector("#flip")
-let questionCard = document.querySelector(".front-card")
-let answerCard = document.querySelector(".back-card")
-let correctBtn = document.querySelector(".correct")
-let incorrectBtn = document.querySelector(".incorrect")
-let nextBtn = document.querySelector(".next")
-let resetBtn = document.querySelector(".reset")
-let score = 0
-let i = 0
+const container = document.querySelector(".container")
+const flipCard = document.querySelector(".flip")
+const questionCard = document.querySelector(".front")
+const answerCard = document.querySelector(".back")
+const correctBtn = document.querySelector(".correct")
+const incorrectBtn = document.querySelector(".incorrect")
+const gameScore = document.querySelector("#current-score")
+const nextBtn = document.querySelector(".next")
+const resetBtn = document.querySelector(".reset")
+
 // Array of Questions
 let jsDeck = [
     {
@@ -32,21 +32,17 @@ let jsDeck = [
     answer: "arguments"
 }]
 
-// function getQuestion () {
-//     questionCard.innerHTML = jsDeck[0][0];
+// I got it right button function
+// let score = 0
+// let i = 0
 
+// function increaseScore () {
+// let add = parseInt(gameScore)
+// score = score + add;
+// return score
 // }
-// // funtion for nextBtn
-// function forward () {
-//     i = i + 1
-//     i = i % jsDeck.length
-//     return jsDeck[i][0]
-// }
-// console.log(forward);
-
-// function nextCard () {
-//     nextBtn
-// }
+// increaseScore(2)
+// console.log(score);
 
 
 // how do I access value in this objects of arrays??
@@ -57,11 +53,17 @@ let jsDeck = [
 //     questionCard.innerHTML = `<p>${questions[0]}</p>`
 // }
 
-let displayQuestion = Object.values(jsDeck);
-console.log(displayQuestion[0]);
+// let displayQuestion = Object.values(jsDeck);
+// console.log(displayQuestion[0]);
 
-// event listeners
+// // event listeners
 // correctBtn.addEventListener("click", () => {
-    // increaseScore()
-// insert dom element.innerHTML = `
+// increaseScore()
+// gameScore.innerHTML = `${score}`
+// document.style.display = "block"
 // })
+
+// event listener to flip card
+flipCard.addEventListener("click", function (e) {
+  flipCard.classList.toggle("flip");
+});
