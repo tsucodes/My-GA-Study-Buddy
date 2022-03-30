@@ -1,37 +1,101 @@
+body {
+    background: linear-gradient(#322e2e, #a49e9e);
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
 header {
-    border: solid 2px black;
-    color: blue;
+    text-align: center;
+    font-family: monospace;
+    color: rgb(251, 251, 251);
 }
-
-.container-cards {
-    border: solid 2px black;
-    width: 200px;
-    height: 100px;
-    background-color: aqua;
+h1 {
+    font-size: 40px;
 }
-.question-card {
-    font-family: Arial, Helvetica, sans-serif;
+.container:hover .card {
+    transform: rotateY(180deg);
 }
-.answer-card {
-    font-family: Arial, Helvetica, sans-serif;
-    display: none;
+.container {
+    perspective: 1000px;
+}
+.card {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 450px;
+    height: 340px;
+    position: relative;
+    transition: all 3s linear;
+    transform-style: preserve-3d;
+}
+.front {
+    font-family: monospace;
+    background-color: rgb(51, 119, 119);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    position: absolute;
+    z-index: 2;
+    backface-visibility: hidden;
+}
+.back {
+    font-family: monospace;
+    background-color: rgb(19, 246, 246);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    position: absolute;
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+#score {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .score-box {
-    border: solid 5px black;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
 #current-score {
     display: none;
-}
+    font-family: monospace;
+    font-size: 25px;
+} 
 .correct {
     border: solid 2px black;
+    margin-right: 10px;
+    font-size: 2em;
 }
 .incorrect {
     border: solid 2px black;
+    margin-left: 10px;
+    font-size: 2em;
 }
 .next {
     border: solid 2px black;
+    margin: auto;
+    display: flex;
+    justify-content: right;
 }
 .reset {
     border: solid 2px black;
+    font-size: 1em;
+    background-color: rgb(177, 8, 8);
+    margin: auto;
+    display: flex;
+    justify-content: center;
 }
