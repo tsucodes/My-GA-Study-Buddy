@@ -1,13 +1,15 @@
 // define Dom elements to manipulate
-const container = document.querySelector(".container")
-const flipCard = document.querySelector(".flip")
-const questionCard = document.querySelector(".front")
-const answerCard = document.querySelector(".back")
-const correctBtn = document.querySelector(".correct")
-const incorrectBtn = document.querySelector(".incorrect")
-const gameScore = document.querySelector("#current-score")
-const nextBtn = document.querySelector(".next")
-const resetBtn = document.querySelector(".reset")
+const container = document.querySelector(".container");
+const flipCard = document.querySelector(".flip");
+const questionCard = document.querySelector(".front");
+const questionContent = document.querySelector(".front-card-content");
+const answerContent = document.querySelector(".back-card-content");
+const answerCard = document.querySelector(".back");
+const correctBtn = document.querySelector("#correct");
+const incorrectBtn = document.querySelector("#incorrect");
+const gameScore = document.querySelector("#current-score");
+const nextBtn = document.querySelector(".next");
+const resetBtn = document.querySelector(".reset");
 
 // Array of Questions
 let jsDeck = [
@@ -31,39 +33,64 @@ let jsDeck = [
     question: "Function _________ are the values received by the function when it is invoked.",
     answer: "arguments"
 }]
+let arrayDeck = [
+    {
+       "map()": "This method creates a new array with the results of calling a provided function on every element in this array.",
+       "filter()": "This method creates a new array with only elements that passes the condition inside the provided function.",
+       "forEach()": "This method helps to loop over array by executing a provided callback function for each element in an array."
+    }
 
-// I got it right button function
-// let score = 0
-// let i = 0
-
-// function increaseScore () {
-// let add = parseInt(gameScore)
-// score = score + add;
-// return score
+]
+let questionIndex = 0
+// function deck1() {
+//     questionContent.textContent = question
 // }
-// increaseScore(2)
-// console.log(score);
+card1()
+function card1() {
+    questionContent.textContent = jsDeck[questionIndex].question
+    answerContent.textContent = jsDeck[questionIndex].answer
+}
 
 
-// how do I access value in this objects of arrays??
-// use find() array method or filter
-// let data = Object.entries(jsDeck)
-// function getQuestion() {
-//     questions = data[Math.floor(Math.random() * jsDeck.length)]
-//     questionCard.innerHTML = `<p>${questions[0]}</p>`
-// }
+// next button
+function next() {
+    console.log("callingNext")
+    questionIndex++
+    card1()
+}
+nextBtn.addEventListener("click", next) 
 
-// let displayQuestion = Object.values(jsDeck);
-// console.log(displayQuestion[0]);
+// Score buttons
+let score = 0;
+correctBtn.addEventListener("click", function() {
+    score += 1
+    gameScore.innerHTML = score;
+});
+// I got it wrong button
+incorrectBtn.addEventListener("click", function(){
+    score -= 1
+    gameScore.innerHTML = score;
+})
 
-// // event listeners
-// correctBtn.addEventListener("click", () => {
-// increaseScore()
-// gameScore.innerHTML = `${score}`
-// document.style.display = "block"
-// })
-
-// event listener to flip card
-flipCard.addEventListener("click", function (e) {
+// Event listener to flip card
+flipCard.addEventListener("click", function() {
   flipCard.classList.toggle("flip");
 });
+
+// Code Graveyard
+
+// I got it right button
+// let point = 0
+// function increase() {
+//    let score = point + parseInt(gameScore.value);
+//    console.log(score);
+// }
+// console.log(increase);
+// / const getQuestion = jsDeck.find(question => question.question);
+// console.log(getQuestion);
+
+// let i =0; 
+// function qCard() {
+//     document.getElementsByClassName("next").textContent = jsDeck[i]; i++;
+//     if (i == jsDeck.length) {i = 0;}
+// }

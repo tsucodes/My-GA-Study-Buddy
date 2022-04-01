@@ -11,19 +11,23 @@
     <header>
         <h1>My GA Study Buddy</h1>
         <h3>Topic: JavaScript</h3>
-        <h4>how to play</h4>
+        <h4>how to play: Read the question on the card and click to reveal the answer. If you got it right click the "I got it right!" button to give yourself a point. If you got it wrong click the "I got it wrong" button to subtract a point. <br>Click the "Next" button to move on to the next card. Click the "Rest Deck button" to go back to the first card in the deck. </h4>
     </header>
-   <div class="container" >
+   <div class="container">
     <div class="flip">
-        <div class="front">front </div>
-        <div class="back"> back</div>
+        <div class="front"> 
+            <div class="front-card-content">Question </div>
+        </div>
+        <div class="back">
+            <div class="back-card-content">Answer </div> 
+        </div>
+    
     </div>
 </div>
-<div id="score">Score:</div>
+ <h3>Score: <span id="current-score"> 0</span> </h3> 
  <div class="score-box">
-     <div id="current-score"> 0 </div>
-     <button class="correct">I got it right!</button>
-     <button class="incorrect">I got it wrong</button>
+     <button id="correct">I got it right!</button>
+     <button id="incorrect">I got it wrong</button>
  </div>
  <div>
      <button class="next">Next</button>
@@ -31,6 +35,6 @@
  <div>
      <button class="reset">Reset Deck</button>
  </div>
-    <script src="study-buddy.js"></script>
+    <script src="study-buddy.js" defer></script>
 </body>
 </html>
