@@ -5,13 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link href="style.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@400;700&family=Heebo:wght@200;500&display=swap" rel="stylesheet">
     <title>My GA Study Buddy</title>
 </head>
 <body>
     <header>
-        <h1>My GA Study Buddy</h1>
+        <h1>My <img id="GA" src="https://coursereport-s3-production.global.ssl.fastly.net/uploads/school/logo/2/original/CMYK-Red_Small_GeneralAssembly-Cog__1_.png"> Study Buddy</h1>
         <h3>Topic: JavaScript</h3>
-        <h4>how to play: Read the question on the card and click to reveal the answer. If you got it right click the "I got it right!" button to give yourself a point. If you got it wrong click the "I got it wrong" button to subtract a point. <br>Click the "Next" button to move on to the next card. Click the "Rest Deck button" to go back to the first card in the deck. </h4>
+        <button id="directions">How to play</button>
+            <div id="modal">
+                <div id="text-box">
+                    <a id="close-button" href="#">Get Started!</a>
+                    <h4>how to play:<br>Read the question on the card and click to reveal the answer. If you got it right, click the "I got it right!" button to give yourself a point. If you got it wrong, click the "I got it wrong" button to subtract a point. <br>Click the "Next" button to move on to the next card. Click the "Rest Deck button" to go back to the first card in the deck. </h4>
+                </div>
+            </div>
+        
     </header>
    <div class="container">
     <div class="flip">

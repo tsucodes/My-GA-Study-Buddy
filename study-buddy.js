@@ -10,53 +10,43 @@ const incorrectBtn = document.querySelector("#incorrect");
 const gameScore = document.querySelector("#current-score");
 const nextBtn = document.querySelector(".next");
 const resetBtn = document.querySelector(".reset");
+const directionBtn = document.querySelector("#directions");
+const modalContent = document.querySelector("#modal");
+const closeBtn = document.querySelector("#close-button")
 
 // Array of Questions
 let jsDeck = [
-    {
-    question: "What are the five primitive data types in JavaScript?",
-    answer: "String, Numbers, Boolean, Undefined, Null",
-    },
-    {
-    question: "What is a higher order function?",
-    answer: "A function that accepts functions as parameters and/or returns a function.",
-    },
-    {
-    question: "How do you acess a page element by id?",
-    answer: "document.getElementById(id);",
-    },
-    {
-    question: "Which array method removes the last element from an array?",
-    answer: "pop()",
-    },
-    {
-    question: "Function _________ are the values received by the function when it is invoked.",
-    answer: "arguments"
-}]
-let arrayDeck = [
-    {
-       "map()": "This method creates a new array with the results of calling a provided function on every element in this array.",
-       "filter()": "This method creates a new array with only elements that passes the condition inside the provided function.",
-       "forEach()": "This method helps to loop over array by executing a provided callback function for each element in an array."
-    }
-
+    {question: "What are the five primitive data types in JavaScript?",
+    answer: "String, Numbers, Boolean, Undefined, Null"},
+    {question: "What is a higher order function?",
+    answer: "A function that accepts functions as parameters and/or returns a function."},
+    {question: "How do you acess a page element by id?",
+    answer: "document.getElementById(id);"},
+    {question: "Which array method removes the last element from an array?",
+    answer: "pop( )"},
+    {question: "Function _________ are the values received by the function when it is invoked.",
+    answer: "arguments"},
+    {question: "What method creates a new array with the results of calling a provided function on every element in this array?",
+    answer: "map( )"},
+    {question: "What method creates a new array with only elements that passes the condition inside the provided function?",
+    answer: "filter( )"},
+    {question: "What method helps to loop over array by executing a provided callback function for each element in an array?",
+    answer: "forEach( )"}
 ]
+// function for card deck
 let questionIndex = 0
-// function deck1() {
-//     questionContent.textContent = question
-// }
-card1()
-function card1() {
+
+deck1()
+function deck1() {
     questionContent.textContent = jsDeck[questionIndex].question
     answerContent.textContent = jsDeck[questionIndex].answer
 }
-
 
 // next button
 function next() {
     console.log("callingNext")
     questionIndex++
-    card1()
+    deck1()
 }
 nextBtn.addEventListener("click", next) 
 
@@ -67,7 +57,7 @@ correctBtn.addEventListener("click", function() {
     gameScore.innerHTML = score;
 });
 // I got it wrong button
-incorrectBtn.addEventListener("click", function(){
+incorrectBtn.addEventListener("click", function() {
     score -= 1
     gameScore.innerHTML = score;
 })
@@ -77,8 +67,24 @@ flipCard.addEventListener("click", function() {
   flipCard.classList.toggle("flip");
 });
 
-// Code Graveyard
-
+// reset button
+function clear () {
+    questionContent.textContent = jsDeck[0].question
+    answerContent.textContent = jsDeck[0].answer
+}
+// console.log(clear);
+resetBtn.addEventListener("click",clear) 
+// open direction modal 
+const directions = () => {
+    modal.style.display = "block"
+}
+directionBtn.addEventListener("click", directions)
+// close direction modal 
+const startGame = () => {
+    modal.style.display = "none"
+}
+closeBtn.addEventListener('click', startGame)
+// Code did not work
 // I got it right button
 // let point = 0
 // function increase() {
@@ -93,4 +99,18 @@ flipCard.addEventListener("click", function() {
 // function qCard() {
 //     document.getElementsByClassName("next").textContent = jsDeck[i]; i++;
 //     if (i == jsDeck.length) {i = 0;}
+// }
+// function clear () {
+//     for (let i = deck1.length -1; i > 0; i--) {
+//      let randomIndex = Math.floor(math.random() * i)
+//      let currentIndex = deck1[i]
+//      deck1[i] = deck1[randomIndex]
+//      deck1[randomIndex] = currentIndex
+//     }
+// function gameEnd() {
+//     if (jsDeck[questionIndex] >= jsDeck[questionIndex].length -1) {
+//       questionContent.textContent = "THE END"
+//   } else { 
+//       deck1()
+//   }
 // }
