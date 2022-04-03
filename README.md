@@ -1,5 +1,12 @@
 # My-GA-Study-Buddy
 My GA Study Buddy is a deck of flash cards built with HTML, CSS and JavaScript. 
+https://tsucodes.github.io/
+![Project preview](studybuddygamepreview.png)
+## Resources 
+Used to flip card
+https://css-tricks.com/almanac/properties/b/backface-visibility/
+https://css-tricks.com/almanac/properties/t/transform/
+https://css-tricks.com/almanac/properties/t/transition/
 
 ## User stories
  As a programmer Google will always be your best resource however, as a beginner have you ever found yourself stuck wondering what to google? My GA Study Buddy is for General Assembly students that want to improve their familiarity with key Javascript terms. By reviewing JavaScript flashcards students will be able to reinforce what they learn in class and hopefully become better Googlers.
