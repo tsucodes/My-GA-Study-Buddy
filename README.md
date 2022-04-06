@@ -1,7 +1,7 @@
 # My-GA-Study-Buddy
 My GA Study Buddy is a deck of flash cards built with HTML, CSS and JavaScript. 
 
-https://tsucodes.github.io/
+[My GA Study Buddy](https://tsucodes.github.io/My-GA-Study-Buddy/)
 
 ![Project preview](studybuddygamepreview.png)
 ## Resources 
