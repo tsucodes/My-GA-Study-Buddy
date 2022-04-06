@@ -31,7 +31,9 @@ let jsDeck = [
     {question: "What method creates a new array with only elements that passes the condition inside the provided function?",
     answer: "filter( )"},
     {question: "What method helps to loop over array by executing a provided callback function for each element in an array?",
-    answer: "forEach( )"}
+    answer: "forEach( )"},
+    {question: "When does a JavaScript function stop executing?",
+    answer: "When it reaches a return statement."}
 ]
 // function for card deck
 let questionIndex = 0
